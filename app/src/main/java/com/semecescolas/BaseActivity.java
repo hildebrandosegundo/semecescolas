@@ -1,6 +1,5 @@
 package com.semecescolas;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.multidex.MultiDex;
@@ -18,7 +17,6 @@ public abstract class BaseActivity extends FragmentActivity {
     private GoogleMap mMap;
     private LatLng teresina = new LatLng(-5.154925, -42.767201);
     protected LocationSourceMap locationSource;
-    private ProgressDialog dialog;
     protected int getLayoutId() {
         return R.layout.kml_map;
     }
@@ -28,7 +26,6 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         setUpMapIfNeeded();
-
     }
 
     protected void attachBaseContext(Context base) {
@@ -39,7 +36,6 @@ public abstract class BaseActivity extends FragmentActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setUpMapIfNeeded();
     }
 
     private void setUpMapIfNeeded() {
@@ -54,7 +50,7 @@ public abstract class BaseActivity extends FragmentActivity {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(teresina, 10));
                 locationSource = new LocationSourceMap();
                 mMap.setMyLocationEnabled(true);
-                mMap.setTrafficEnabled(true);
+                mMap.setTrafficEnabled(false);
                 mMap.getUiSettings().setZoomControlsEnabled(true);
                 mMap.setLocationSource(locationSource);
                 locationSource.setLocation(teresina);
@@ -63,12 +59,10 @@ public abstract class BaseActivity extends FragmentActivity {
                 }
             }
         });
-
     }
     protected abstract void startMap();
 
     protected GoogleMap getMap() {
-        setUpMapIfNeeded();
         return mMap;
     }
 }

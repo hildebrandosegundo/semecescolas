@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+
     signingConfigs {
         config {
             keyAlias 'chave_semec'
@@ -10,35 +11,36 @@ android {
         }
     }
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.semecescolas"
-        minSdkVersion 14
+        minSdkVersion 12
         targetSdkVersion 9
-        versionCode 3
-        versionName "1.2"
-        // Enabling multidex support.
+        versionCode 17
+        versionName "1.4.2"
         multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    //testCompile 'junit:junit:4.12'
-    //compile 'com.android.support:appcompat-v7:24.0.0-beta1'
-    //compile 'com.android.support:design:23.0.1'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:design:23.0.1'
     compile 'com.google.android.gms:play-services:9.4.0'
     compile 'com.google.maps.android:android-maps-utils:0.4.+'
     compile 'com.android.support:multidex:1.0.0'
-    compile 'com.google.android.gms:play-services-ads:9.4.0'
     compile 'com.google.android.gms:play-services-auth:9.4.0'
     compile 'com.google.android.gms:play-services-gcm:9.4.0'
-    compile 'com.android.support:design:24.2.0'
+    //compile 'com.github.clans:fab:1.6.4'
+    // compile 'org.jsoup:jsoup:1.10.1'
+    //compile 'com.android.support:design:24.2.0'
 }

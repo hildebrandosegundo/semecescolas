@@ -8,28 +8,32 @@ public class MyMarker
     private String mLabel;
     private String mIcon;
     private String codSemec;
-    private String atendimento;
     private String telefones;
+    private String ideb;
     private String aluno;
     private String turmas;
     private String salas;
     private Double mLatitude;
     private Double mLongitude;
 
-    public MyMarker(String icon,String label,String codSemec,String atendimento,String telefones,String aluno,String turmas,String salas,Double latitude, Double longitude)
+    public MyMarker(String icon,String label,String codSemec,String ideb, String telefones,String aluno,String turmas,String salas,Double latitude, Double longitude)
     {
         this.mLabel = label;
         this.mLatitude = latitude;
         this.mLongitude = longitude;
         this.mIcon = icon;
         this.codSemec = codSemec;
-        this.atendimento = atendimento;
         this.telefones = telefones;
+        this.ideb = ideb;
         this.aluno = aluno;
         this.turmas = turmas;
         this.salas = salas;
 
     }
+
+    public String getIdeb() {return ideb;}
+
+    public void setIdeb(String ideb) {this.ideb = ideb;}
 
     public String getCodSemec() {
         return codSemec;
@@ -37,14 +41,6 @@ public class MyMarker
 
     public void setCodSemec(String codSemec) {
         this.codSemec = codSemec;
-    }
-
-    public String getAtendimento() {
-        return atendimento;
-    }
-
-    public void setAtendimento(String atendimento) {
-        this.atendimento = atendimento;
     }
 
     public String getTelefones() {

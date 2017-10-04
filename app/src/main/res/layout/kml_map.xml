@@ -10,24 +10,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
+        <Button android:layout_height="fill_parent" android:id="@+id/pesqlog"
+            android:textColor="#FFF" android:background="@drawable/ic_action_mapa_1"
+            android:layout_weight=".25"
+            android:layout_width="0dip"
+            android:onClick="pesqLog"
+            android:scaleType="fitCenter"
+            style="@style/Widget.AppCompat.Button.Small" />
+        <Button android:layout_height="fill_parent" android:id="@+id/pesqescola"
+            android:textColor="#FFF" android:background="@drawable/ic_action_escola"
+            android:layout_weight=".25"
+            android:layout_width="0dip"
+            android:onClick="pesqEscola"
+            android:scaleType="fitCenter"
+            style="@style/Widget.AppCompat.Button.Small" />
         <EditText
             android:id="@+id/pesquisa"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Ex.: Rua, numero, cidade" />
-        <!--<Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Distância"
-            android:onClick="getDistance" />-->
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:icon="@android:drawable/ic_menu_search"
-            android:text="Pesquisa"
+            android:maxLines="1"
+            android:scrollIndicators="top|bottom"
+            android:hint="Ex.: Rua, numero, cidade"
+            android:drawableRight="@android:drawable/ic_menu_search"
             android:onClick="getLocation" />
     </LinearLayout>
 
@@ -36,41 +41,86 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Spinner
-            android:id="@+id/modalidade"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawSelectorOnTop="true" />
+
 
         <Spinner
             android:id="@+id/serie"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.87"
             android:drawSelectorOnTop="true" />
+        <Button android:layout_height="fill_parent" android:id="@+id/tipo_rota_pe"
+            android:textColor="#FFF" android:background="@drawable/ic_action_man_walking_1"
+            android:layout_weight=".25"
+            android:layout_width="0dip"
+            android:onClick="tipoPe"
+            android:scaleType="fitCenter"
+            style="@style/Widget.AppCompat.Button.Small" />
+        <Button android:layout_height="fill_parent" android:id="@+id/tipo_rota_bike"
+            android:textColor="#FFF" android:background="@drawable/ic_action_bike"
+            android:layout_weight=".25"
+            android:layout_width="0dip"
+            android:onClick="tipoBike"
+            android:scaleType="fitCenter"
+            style="@style/Widget.AppCompat.Button.Small" />
+        <Button android:layout_height="fill_parent" android:id="@+id/tipo_rota_car"
+            android:textColor="#FFF" android:background="@drawable/ic_action_car"
+            android:layout_weight=".25"
+            android:layout_width="0dip"
+            android:onClick="tipoCar"
+            android:scaleType="fitCenter"
+            style="@style/Widget.AppCompat.Button.Small" />
 
-        <Spinner
-            android:id="@+id/tipo_rota"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:drawSelectorOnTop="true"
-            android:layout_weight="1" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rota"
-            android:onClick="getRouteByGMAV2" />
+            android:onClick="getRouteByGMAV2"
+            android:background="@mipmap/ic_direction"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:typeface="monospace"
+            android:textStyle="normal|bold"
+            android:textSize="12sp" />
     </LinearLayout>
+    <FrameLayout
+        android:id="@+id/mapFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
     <fragment
         android:id="@+id/map"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        tools:layout="@layout/kml_map" />
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+        <Spinner
+            android:id="@+id/modalidade"
+            android:layout_gravity="top|left"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="true" />
+        <CheckBox
+            android:text="Trafego"
+            android:layout_gravity="bottom|center"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox"
+            android:onClick="trafegoVia"/>
+        <Button android:id="@+id/info_escola"
+            android:background="@drawable/ic_action_info"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:onClick="infoEscola"
+            android:layout_gravity="left|center"/>
+        <!--<android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:src="@drawable/ic_action_info"
+            android:layout_gravity="bottom|right|end"/>-->
+    </FrameLayout>
+
 
 
 </LinearLayout>
