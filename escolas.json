@@ -1,4 +1,15 @@
 {"dados":[
+   {
+    "nome": "CMEI JORGE AMADO",
+    "CodSemec": 0000,
+    "latitude": -5.037768,
+    "longitude": -42.728753,
+    "Telefones": "(86) 0000-0000",
+    "aluno": "-",
+    "turmas": "-",
+    "salas": "-",
+    "Ideb": "-"
+  },
   {
     "nome": "EM SERAFIM",
     "CodSemec": 44929,
