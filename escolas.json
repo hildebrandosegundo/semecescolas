@@ -1,4 +1,15 @@
 {"dados":[
+    {
+    "nome": "CMEI CARLOS DRUMMOND DE ANDRADE",
+    "CodSemec": 0000,
+    "latitude": -5.1925320,
+    "longitude": -42.7379830,
+    "Telefones": "(86) 0000-0000",
+    "aluno": "-",
+    "turmas": "-",
+    "salas": "-",
+    "Ideb": "-"
+  },
    {
     "nome": "CMEI JORGE AMADO",
     "CodSemec": 0000,
@@ -1938,8 +1949,8 @@
   {
     "nome": "CMEI PROFESSOR WALL FERRAZ",
     "CodSemec": 99212,
-    "latitude": -5.151387,
-    "longitude": -42.798593,
+    "latitude": -5.2771355,
+    "longitude": -42.799794,
     "Telefones": 32195191,
     "aluno": 282,
     "turmas": 11,
