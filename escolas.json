@@ -1,4 +1,15 @@
 {"dados":[
+         {
+    "nome": "EM POETA DA COSTA E SILVA",
+    "CodSemec": 0000,
+    "latitude": -4.980161,
+    "longitude": -42.813005,
+    "Telefones": "(86) 0000-0000",
+    "aluno": "-",
+    "turmas": "-",
+    "salas": "-",
+    "Ideb": "-"
+  },
        {
     "nome": "CMEI HELENA MEDEIROS",
     "CodSemec": 0000,
