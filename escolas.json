@@ -1,4 +1,15 @@
 {"dados":[
+       {
+    "nome": "CMEI HELENA MEDEIROS",
+    "CodSemec": 0000,
+    "latitude": -5.063299,
+    "longitude": -42.836278,
+    "Telefones": "(86) 0000-0000",
+    "aluno": "-",
+    "turmas": "-",
+    "salas": "-",
+    "Ideb": "-"
+  },
     {
     "nome": "CMEI CARLOS DRUMMOND DE ANDRADE",
     "CodSemec": 0000,
